@@ -184,10 +184,10 @@ function AfficherLaListeDesCandidats (){
                     }
 
             }
-}
+    }
      menuPrincipal ();
 
-     function VoterPourUnCandidat (){
+function VoterPourUnCandidat (){
      let cin =prompt("entrez ta propre num CIN: ");
      let dejaVote = false;
      for (let i=0; i< candidat1.length; i++){
@@ -221,49 +221,4 @@ if(!trouve) {
 console.log("candidat introuvable" );
 }
 }
-function ModifierLesInformationsPourCandidat(){
-    let CIN =prompt("entrez le cin de candidat1 qui tu veux le modifier: ");
-    let exist = false;
-       for (let i=0; i< candidat1.length; i++){
-            if (candidat1[i].cin === CIN){
-                exist = true;
-            }
-        }
-        if(!exist){
-            console.log("le cin de candidta est introvablle");
-            menuPrincipal()
-            return;
-        }
-
-    console.log("===================================================");
-    console.log("     menu de modification     ");
-    console.log("1. Modifier le parti politique d'un candidat");
-    console.log("2. Modifier l'âge d'un candidat")
-    console.log("====================================================")
-     let choix = Number(prompt("entrez votre choix: "))
-        console.log("")
-
-    
-if(choix === 1){
-    for(let i=0; i< candidat1.length; i++){
-        if(candidat1[i].cin === CIN){
-            let nouveauPartiPolitique =prompt("entrez la nouveelle modification de la parti politique:  ");
-            candidat1[i].partiPolitique = nouveauPartiPolitique;
-            console.log("le parti politique d'un candidat a ete modifier");
-            break;
-        }
-    }
-
-} else if (choix===2){
-    for(let i=0; i< candidat1.length; i++){
-        if(candidat1[i].cin === CIN){
-            let nouveauAge =prompt("entrez la nouveelle modification de lage:  ");
-            candidat1[i].age = nouveauAge;
-            console.log(" l'age d'un candidat a ete modifier");
-            break;
-        }
-    }
-
-} 
 menuPrincipal()
-}
